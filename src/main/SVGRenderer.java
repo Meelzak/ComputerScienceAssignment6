@@ -96,7 +96,7 @@ public class SVGRenderer
 				case "polygon":
 					shape = (Polygon) element;
 					decorator = new DecoratorGraphics2DPolygon((Polygon) shape, g2dImage);
-					System.out.println("Ï am present");
+					// System.out.println("Ï am present");
 					break;
 
 				case "ellipse":
