@@ -67,8 +67,8 @@ public class SVGRenderer
        	g2dImage.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
        	g2dImage.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
        	
-       	g2d.setPaint(new Color(255, 127, 0));
-       	g2d.drawString("Draw SVG contents here.", 10, 20);
+       //	g2d.setPaint(new Color(255, 127, 0));
+       //	g2d.drawString("Draw SVG contents here.", 10, 20);
 
        	// **
        	// ** TODO: Draw SVG contents here.
@@ -93,6 +93,12 @@ public class SVGRenderer
 					decorator = new DecoratorGraphics2DPath((Path) shape, g2dImage);
 					break;
 
+				case "polygon":
+					shape = (Polygon) element;
+					decorator = new DecoratorGraphics2DPolygon((Polygon) shape, g2dImage);
+					System.out.println("Ï am present");
+					break;
+
 				case "ellipse":
 					shape = (Ellipse) element;
 					decorator = new DecoratorGraphics2DEllipse((Ellipse) shape, g2dImage);
@@ -107,12 +113,7 @@ public class SVGRenderer
 					shape = (Polyline) element;
 					decorator = new DecoratorGraphics2DPolyline((Polyline) shape, g2dImage);
 					break;
-					
-				case "Polygon":
-					shape = (Polygon) element;
-					decorator = new DecoratorGraphics2DPolygon((Polygon) shape, g2dImage);
-					System.out.println("Ï am present");
-					break;
+
 			}
 
 			if (shape != null) {
